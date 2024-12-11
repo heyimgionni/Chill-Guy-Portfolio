@@ -1,0 +1,156 @@
+/* reset css */
+
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url(./NeueMontreal-FreeForPersonalUse/NeueMontreal-Light.otf);
+}
+:root {
+    --ff-primary:'PP Neue Montreal';
+    --vdark-emerald: #0D2B1D;
+    --dark-emerald: #345635;
+    --normal-emerald: #6B8F71;
+    --light-emerald: #AEC3B0;
+    --vlight-emerald: #E3EFD3;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {font-size: 62.5%;}
+body {font-size: 1.6rem;font-family: var(--ff-primary);font-weight: normal;cursor:none;}
+body::-webkit-scrollbar {width: 6px;}
+body::-webkit-scrollbar-track {background: var(--normal-emerald);}
+img {object-fit: contain;width: 100%;}
+a{text-decoration: none;}
+li{list-style-type: none;}
+
+[data-cursor] {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+[data-cursor] img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain ;
+}
+
+/* hero and nav */
+
+main {
+    background: var(--dark-emerald);
+    min-height: 92dvh;
+}
+
+.hero{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15dvh;
+}
+
+.navbar .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .logo img {
+    padding: 1rem;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px dotted var(--vlight-emerald);
+    background: transparent;
+}
+
+.navbar .logo h3 {
+    font-size: 2.4rem;
+    color: var(--vlight-emerald)
+}
+
+.navbar .nav-list li {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.navbar .nav-list li a {
+    color: var(--vlight-emerald);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hero-content {
+    margin-top: 5rem;    
+}
+
+.hero-content img {
+    width: 200px;
+}
+
+
+.hero-content h1 {
+    color: var(--vlight-emerald);
+    font-size: clamp(2rem, calc(1rem + 15vw), 15em);
+}
+
+.hero-content h1 > .chill {
+    color: var(--vdark-emerald)
+}
+
+/* infinite text */
+
+.infinite-scroolText {
+    height: 8dvh;
+    padding: 0 2rem;
+    background: var(--vlight-emerald);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.infinite-scroolText .container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    animation: infiniteScrool 12s infinite linear;
+}
+
+.infinite-scroolText h2 {
+    font-size: 3rem;
+    white-space: nowrap;
+    color: var(--vdark-emerald);
+    position: relative;
+}
+
+@keyframes infiniteScrool {
+    from {
+        transform: translateX(100%); /* Start off to the right */
+    }
+    to {
+        transform: translateX(-100%); /* Move to the left */
+    }
+}
+
+/* about */
+
+.about {
+    height: 70dvh;
+    border: 1px solid red;
+}
